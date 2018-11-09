@@ -1,6 +1,6 @@
 {
-  "name": "Profile",
-  "base": "PersistedModel",
+  "name": "profile",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -19,7 +19,77 @@
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [],
+  "relations": {
+    "devis": {
+      "type": "hasMany",
+      "model": "devis",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [{
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "DENY"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "login"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "logout"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "confirm"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "$owner",
+    "permission": "ALLOW",
+    "property": "findById"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "$owner",
+    "permission": "ALLOW",
+    "property": "updateAttributes"
+  },
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "ALLOW",
+    "property": "resetPassword"
+  },
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "create"
+  },
+  {
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$owner",
+    "permission": "ALLOW",
+    "property": "__get__devis"
+  }
+],
   "methods": {}
 }

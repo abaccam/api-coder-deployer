@@ -35,16 +35,12 @@
     "dataSource": "db",
     "public": false
   },
-  "Account": {
-    "dataSource": "accountDS",
+  "devis": {
+    "dataSource": "mysqlDS",
     "public": true
   },
-  "Devis": {
-    "dataSource": "accountDS",
-    "public": true
-  },
-  "Profile": {
-    "dataSource": "accountDS",
+  "profile": {
+    "dataSource": "mysqlDS",
     "public": true
   }
 }

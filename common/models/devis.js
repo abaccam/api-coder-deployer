@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function(Devis) {
+module.exports = function(devis) {
 
 };

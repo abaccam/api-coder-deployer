@@ -12,5 +12,15 @@
     "name": "accountDS",
     "user": "demo",
     "connector": "mysql"
+  },
+  "mysqlDS": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "basilDB",
+    "password": "doby",
+    "name": "mysqlDS",
+    "user": "admin",
+    "connector": "mysql"
   }
 }
